@@ -1,0 +1,42 @@
+# ===================================================================
+# JHipster Sample Spring Cloud Config.
+# ===================================================================
+
+# Property used on app startup to check the config server status
+configserver:
+    name: JHipster Registry config server
+    status: Connected to Service Registry v1.0.0 Config Server!
+
+# OAuth 2
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: https://b2c-keycloak-server.azurewebsites.net/auth/realms/astra-bank
+        registration:
+          oidc:
+            client-id: fusion-b2c-apps
+            client-secret: 455693a8-ec02-4607-b597-2ea6f2233c8a
+
+# Eureka connection
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: https://admin:admin@b2c-service-registry.scm.azurewebsites.net/eureka/
+
+
+# Default JWT secret token (to be changed in production!)
+jhipster:
+    security:
+        authentication:
+            jwt:
+                base64-secret: bXktc2VjcmV0LWtleS13aGljaC1zaG91bGQtYmUtY2hhbmdlZC1pbi1wcm9kdWN0aW9uLWFuZC1iZS1iYXNlNjQtZW5jb2RlZAo=
+
+# Enable /management/logfile endpoint for all apps
+logging:
+    path: /tmp
+    file: ${spring.application.name}.log
