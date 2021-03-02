@@ -1,0 +1,65 @@
+
+application {
+  config {
+    baseName finGateway,
+    applicationType gateway,
+    packageName com.finastra.apps.gateway,
+    authenticationType jwt,
+    prodDatabaseType oracle,
+    clientFramework react
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName finHealth,
+    applicationType microservice,
+    packageName com.finastra.apps.finhealth,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    skipClient true
+  }
+  entities Employee, Dependent, Entitlement
+}
+
+
+entity Employee {
+    workDayNo String unique required /** Employee WorkDayNo*/
+	username String unique required /** Employee username */
+    designation String /** Employee designation */
+    lastName String required /** Last name */
+    firstName String required /** First name */  
+}
+
+entity Dependent{
+	firstName String required
+    lastName String required
+	relationshipx RelationshipType required
+    relationshipOthers String
+    image ImageBlob
+}
+
+entity Entitlement {
+	workDayNo String required
+    medicalReimbursement BigDecimal required min(0)
+    vaccineReimbursement BigDecimal required min(0)
+    vitaminsReimbursement BigDecimal required min(0)
+    opticalReimbursement BigDecimal required min(0)
+}
+
+enum RelationshipType {
+    CHILD, GRAND_PARENT, SPOUSE, SIBLING, PARENT, OTHERS
+}
+
+relationship OneToOne {
+	Employee{entitlement} to Entitlement
+}
+
+relationship OneToMany {
+	Employee{dependents} to Dependent{employee}
+}
+
+
+
+    

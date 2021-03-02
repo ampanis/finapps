@@ -1,0 +1,61 @@
+{
+  "name": "Employee",
+  "fields": [
+    {
+      "fieldName": "workDayNo",
+      "fieldType": "String",
+      "javadoc": "Employee WorkDayNo",
+      "fieldValidateRules": ["unique", "required"]
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "javadoc": "Employee username",
+      "fieldValidateRules": ["unique", "required"]
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String",
+      "javadoc": "Employee designation"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "javadoc": "Last name",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "javadoc": "First name",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "entitlement",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "entitlement",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dependent",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "dependents"
+    }
+  ],
+  "changelogDate": "20210302023347",
+  "entityTableName": "employee",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["finGateway", "finHealth"]
+}
