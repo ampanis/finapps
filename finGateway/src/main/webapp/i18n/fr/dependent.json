@@ -1,0 +1,27 @@
+{
+  "finGatewayApp": {
+    "dependent": {
+      "home": {
+        "title": "Dependents",
+        "createLabel": "Créer un nouveau Dependent",
+        "createOrEditLabel": "Créer ou éditer un Dependent",
+        "notFound": "Aucun Dependent trouvé"
+      },
+      "created": "Un nouveau Dependent a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dependent avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dependent avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dependent {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dependent"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "relationshipx": "Relationshipx",
+      "relationshipOthers": "Relationship Others",
+      "image": "Image",
+      "employee": "Employee"
+    }
+  }
+}

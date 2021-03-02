@@ -1,0 +1,26 @@
+{
+  "finGatewayApp": {
+    "entitlement": {
+      "home": {
+        "title": "Entitlements",
+        "createLabel": "Créer un nouveau Entitlement",
+        "createOrEditLabel": "Créer ou éditer un Entitlement",
+        "notFound": "Aucun Entitlement trouvé"
+      },
+      "created": "Un nouveau Entitlement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Entitlement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Entitlement avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Entitlement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Entitlement"
+      },
+      "workDayNo": "Work Day No",
+      "medicalReimbursement": "Medical Reimbursement",
+      "vaccineReimbursement": "Vaccine Reimbursement",
+      "vitaminsReimbursement": "Vitamins Reimbursement",
+      "opticalReimbursement": "Optical Reimbursement"
+    }
+  }
+}

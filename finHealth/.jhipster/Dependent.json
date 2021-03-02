@@ -1,0 +1,50 @@
+{
+  "name": "Dependent",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relationshipx",
+      "fieldType": "RelationshipType",
+      "fieldValues": "CHILD,GRAND_PARENT,SPOUSE,SIBLING,PARENT,OTHERS",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relationshipOthers",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "dependents",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210302023651",
+  "entityTableName": "dependent",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["finGateway", "finHealth"]
+}
